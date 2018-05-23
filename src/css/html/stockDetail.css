@@ -1,0 +1,123 @@
+/**/
+.topArea{
+	display: flex;
+	position: fixed;
+	width: 100%;
+	border-bottom: 2px solid #ccc;
+	font-size: 0.21rem;
+	padding: 8px 0;
+	background-color: #fff;
+	align-items: center;
+	justify-content: center;
+	z-index: 3;
+	min-width: 360px;
+	max-width: 1024px;
+}
+.topArea a{
+	position: absolute;
+	font-size: 0.2rem;
+	left: 5px;
+}
+/**/
+.contentArea{
+	padding-bottom: 85px;
+}
+.stock_up{
+	color: #FF3C51;
+}
+.stock_down{
+	color: #05c17d;
+}
+.stockInfo{
+	padding: 18px 15px;
+	background-color: #fff;
+}
+.stockInfo_row{
+	display: flex;
+	align-items: flex-end;
+}
+.stockInfo_row:nth-child(2){
+	margin-top: 20px;
+}
+.stockInfo_row .stockName{
+	font-size: 0.18rem;
+}
+.stockInfo_row .stockCode{
+	font-size: 0.13rem;
+	color: #9b9c9f;
+}
+.stockInfo_row .stockPrice{
+	text-align: right;
+	font-size: 0.2rem;
+}
+.stockInfo_row .stockTitle{
+	font-size: 0.15rem;
+	color: #9b9c9f;
+}
+.stockInfo_row .stockPercent{
+	font-size: 0.13rem;
+}
+.stockInfo_row .stockGap{
+	font-size: 0.13rem;
+}
+.stockValue{
+	margin-top: 15px;
+	background-color: #fff;
+	padding: 18px 15px;
+	line-height: 0.3rem;
+}
+.stockValue_key{
+	color: #9b9c9f;
+	font-size: 0.13rem;
+}
+.stockValue_value{
+	font-size: 0.135rem;
+}
+/**/
+.stockImg{
+	margin-top: 15px;
+}
+/**/
+.appTab{
+	padding: 10px 15px;
+	background-color: #fff;
+}
+.appTab span{
+	display: inline-block;
+	width: 22%;
+	text-align: center;
+	font-size: 0.135rem;
+	padding: 0.06rem 0;
+	border-radius: 8px;
+}
+.appTab_active{
+	background-color: blueviolet;
+	color: #fff;
+}
+.appTabContent{
+	display: none;
+}
+.appTabContent_active{
+	display: block;
+	background-color: #323232;
+}
+.appTabContent img{
+	width: 100%;
+}
+/**/
+.stockInput{
+	display: block;
+	color: #fff;
+	width: 90%;
+	margin: 0.25rem auto 0;
+	border-radius: 12px;
+	border: 0;
+	font-size: 0.14rem;
+	padding: 0.1rem 0;
+}
+.stockInput_add{
+	background-color: #dd524d;	
+}
+.stockInput_remove{
+	color: #333;
+}

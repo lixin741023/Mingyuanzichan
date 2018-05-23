@@ -1,0 +1,36 @@
+/**/
+.topArea{
+	display: flex;
+	position: relative;
+	border-bottom: 2px solid #ccc;
+	font-size: 0.21rem;
+	padding: 8px 0;
+	background-color: #fff;
+	align-items: center;
+	justify-content: center;
+}
+.topArea a{
+	position: absolute;
+	font-size: 0.2rem;
+	left: 5px;
+}
+/**/
+.hyList_title{
+	margin-top: 10px;
+	color: #9b9c9f;
+	font-size: 0.155rem;
+}
+.hyList_list{
+	margin-top: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+	font-size: 0.14rem;
+}
+.hyList_list .mui-col-xs-4:nth-child(2){
+	color: red;
+	font-size: 0.16rem;
+}
+.hyList_list .mui-col-xs-4:nth-child(3){
+	color: red;
+	font-size: 0.16rem;
+}

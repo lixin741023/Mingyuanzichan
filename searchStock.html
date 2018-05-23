@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>股票搜索</title>
+    <link href="src/plugins/mui/mui.min.css" rel="stylesheet"/>
+    <link href="src/css/global.css" rel="stylesheet" />
+    <link href="src/css/html/searchStock.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="searchStock">
+		<section class="topArea">
+			<a href="market.html" class="mui-icon mui-icon-back"></a>
+			<div>股票搜索</div>
+		</section>
+		
+		<section class="contentArea">
+    		<div class="search">
+    			<div class="mui-input-row">
+			        <input @keyup="searchUP" type="number" class="mui-input-clear" placeholder="请输入股票代码" v-model="searchCode">
+			    </div>
+    		</div>
+    		<ul class="searchResult">
+    			<li class="mui-row" v-if="searchResult" @click="hrefStockDetail">
+    				<div class="mui-col-xs-2">
+    					<div class="stockClass">{{stockType}}</div>
+    				</div>
+    				<div class="mui-col-xs-1"></div>
+    				<div class="mui-col-xs-3">
+    					<span class="stockCode">{{searchResult.code}}</span>
+    				</div>
+    				<div class="mui-col-xs-4">
+    					<span class="stockName">{{searchResult.name}}</span>
+    				</div>
+    				<div class="mui-col-xs-2 stockInput">
+    					<span class="stockInput_add">+</span>
+    				</div>
+    			</li>
+    		</ul>
+		</section>
+	</div>
+	
+<script src="src/plugins/jquery-3.2.1.min.js"></script>
+<script src="src/plugins/vue.js"></script>
+<script src="src/plugins/mui/mui.min.js"></script>
+
+<script src="src/js/global.js"></script>
+<script src="src/js/callAPI.js"></script>
+<!--<script src="src/js/components/bottomNAV.js"></script>-->
+<script src="src/js/vue/searchStock.js"></script>
+<script>
+	mui.init();
+	
+</script>
+</body>
+</html>

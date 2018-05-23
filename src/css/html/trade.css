@@ -1,0 +1,372 @@
+#trade input,select{
+	height: auto;
+	margin: 0;
+	line-height: normal;
+}
+/**/
+.topArea{
+	position: fixed;
+	min-width: 360px;
+	max-width: 1024px;
+	width: 100%;
+	padding: 0 10px;
+	z-index: 3;
+	top: 0;
+	background-color: #fff;
+}
+.topArea div{
+	margin-top: 0.25rem;
+	padding-bottom: 0.08rem;
+	font-size: 0.21rem;
+	border-bottom: 1px solid #636479;
+}
+/**/
+.appTab{
+	padding: 10px 10px;
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #636479;
+}
+.appTab span{
+	text-align: center;
+	font-size: 0.15rem;
+	padding: 0.07rem 0.25rem;
+	border-radius: 8px;
+}
+.appTab_active{
+	background-color: blueviolet;
+	color: #fff;
+}
+.appTabContent{
+	display: none;
+}
+.appTabContent_active{
+	display: block;
+}
+.appTab2{
+	justify-content: space-around;
+	border: 0;
+}
+/**/
+/*询价项目*/
+.project{
+	margin-top: 15px;
+	background-color: #fff;
+	padding: 10px 15px 30px;
+}
+.project input,select{
+	border: 0;
+	font-size: 0.165rem;
+	width: 60%;
+}
+.project div{
+	display: flex;
+	font-size: 0.165rem;
+	border-bottom: 1px solid #c8c7cc;
+	align-items: center;
+}
+.project div span{
+	width: 45%;
+	text-align: center;
+}
+.projectButton{
+	display: block;
+	color: #fff;
+	width: 80%;
+	margin: 0.25rem auto 0;
+	background-color: #dd524d;
+	border-radius: 14px;
+	border: 0;
+	font-size: 0.14rem;
+	padding: 0.08rem 0;
+}
+/*询价记录*/
+.record{
+	margin-top: 15px;
+	margin-bottom: 30px;
+}
+.record li{
+	list-style: none;
+	margin-top: 25px;
+	background-color: #fff;
+	padding-bottom: 20px;
+}
+.record li:first-child{
+	margin-top: 0;
+}
+.recordTitle{
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: flex-start;
+	font-size: 0.165rem;
+	border-bottom: 1px solid #c8c7cc;
+	padding: 10px 0 7px 40px;
+}
+.recordTitle_row1 span:nth-child(2){
+	margin-left: 10px;
+}
+.recordTitle_row2{
+	display: flex;
+	align-items: center;
+	margin-top: 10px;
+}
+.recordTitle_row2 h3{
+	font-size: 0.165rem;
+	color: #dd524d;	
+}
+.recordTitle_row2 div:nth-child(2){
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
+	font-size: 0.13rem;
+	color: #333;
+}
+.recordState{
+	position: absolute;
+	right: 18px;
+	top: 0.25rem;
+	font-size: 0.11rem;
+	padding: 5px;
+}
+.recordState_valid{
+	background-color: #dd524d;
+	color: #fff;
+}
+.recordState_invalid{
+	color: #fff;
+}
+.recordRoow{
+	display: flex;
+	align-items: flex-end;
+	width: 90%;
+	margin: 0 auto;
+	font-size: 0.165rem;
+	border-bottom: 1px solid #c8c7cc;
+	padding: 10px 0 7px 40px;	
+}
+.recordRoow span:nth-child(1){
+	width: 40%;
+	color: #333;
+}
+.recordRoow span:nth-child(2){
+	color: #9c9c9c;
+}
+.recordButton{
+	display: block;
+	color: #fff;
+	width: 80%;
+	margin: 0.25rem auto 0;
+	background-color: #dd524d;
+	border-radius: 14px;
+	border: 0;
+	font-size: 0.14rem;
+	padding: 0.08rem 0;
+}
+/*持仓*/
+.depot{
+	margin-top: 10px;
+	padding: 0 15px;
+}
+.depotTitle{
+	display: flex;
+	text-align: center;
+	align-items: center;
+	font-size: 0.14rem;
+	color: #9b9c9f;
+	justify-content: space-between;
+}
+.depotCol{
+	display: flex;
+	flex-direction: column;
+}
+.depotList{
+	list-style: none;
+	display: flex;
+	margin-top: 0.14rem;
+	text-align: center;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 0.14rem;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+/*结算*/
+.settle{
+	margin-top: 10px;
+	padding: 0 15px;
+}
+.settleTitle{
+	display: flex;
+	text-align: center;
+	align-items: center;
+	font-size: 0.14rem;
+	color: #9b9c9f;
+}
+.settleCol{
+	display: flex;
+	flex-direction: column;
+}
+.settleList{
+	list-style: none;
+	display: flex;
+	margin-top: 0.14rem;
+	text-align: center;
+	align-items: center;
+	font-size: 0.14rem;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+/*申购*/
+.Apply{
+	margin-top: 10px;
+	padding: 0 5px;
+}
+.ApplyTitle{
+	display: flex;
+	text-align: center;
+	align-items: center;
+	font-size: 0.14rem;
+	color: #9b9c9f;
+}
+.ApplyCol{
+	display: flex;
+	flex-direction: column;
+}
+.ApplyList{
+	list-style: none;
+	display: flex;
+	margin-top: 0.14rem;
+	text-align: center;
+	align-items: center;
+	font-size: 0.14rem;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+.ApplyState_a{/*申购中*/
+	background-color: greenyellow;
+	border-radius: 8px;
+	color: #fff;
+}
+.ApplyState_b{/*未成交*/
+	background-color: red;
+	border-radius: 8px;
+	color: #fff;
+}
+.ApplyState_c{/*持仓*/
+	background-color: goldenrod;
+	border-radius: 8px;
+	color: #fff;
+}
+/*遮罩层*/
+.zzc1{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.8);
+    display: none;
+}
+/*申购确认框*/
+.ApplyBox{
+	position: relative;
+	margin: 1.3rem auto 0;
+	border: 1px solid transparent;
+	width: 3rem;
+	border-radius: 0.1rem;
+	background-color: #fff;
+	padding-bottom: 0.2rem;
+}
+.ApplyBox .mui-icon{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #dd524d;
+}
+.ApplyBox h3{
+	color: #dd524d;
+	margin-top: 15px;
+	text-align: center;
+	font-size: 0.165rem;
+	margin-bottom: 0.2rem;
+}
+.ApplyBox_row{
+	margin-top: 10px;
+	padding: 0 0.2rem;
+	font-size: 0.14rem;
+}
+.ApplyBox_row_impor{
+	color: red;
+	font-weight: bold;
+	font-size: 0.15rem;
+}
+.ApplyBox_row span:first-child{
+	display: inline-block;
+	width: 40%;
+}
+.ApplyBox_button{
+	display: block;
+	color: #fff;
+	width: 70%;
+	margin: 0.25rem auto 0;
+	border-radius: 12px;
+	border: 0;
+	font-size: 0.14rem;
+	padding: 0.1rem 0;
+	background-color: #dd524d;
+}
+/*持仓详情框*/
+.depotBox{
+	position: relative;
+	margin: 1.3rem auto 0;
+	border: 1px solid transparent;
+	width: 3.5rem;
+	border-radius: 0.1rem;
+	background-color: #fff;
+	padding-bottom: 0.2rem;
+}
+.depotBox .mui-icon{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #dd524d;
+}
+.depotBox h3{
+	color: #dd524d;
+	margin-top: 15px;
+	text-align: center;
+	font-size: 0.165rem;
+	margin-bottom: 0.2rem;
+}
+.depotBox h3 span{
+	font-size: 0.1rem;
+	margin-left: 5px;
+}
+.depotBox_row{
+	margin-top: 10px;
+	padding: 0 0.2rem;
+	font-size: 0.14rem;
+}
+.depotBox_row_impor{
+	color: red;
+	font-weight: bold;
+	font-size: 0.15rem;
+}
+.depotBox_row span:first-child{
+	display: inline-block;
+	width: 40%;
+}
+.depotBox_button{
+	display: block;
+	color: #fff;
+	width: 70%;
+	margin: 0.25rem auto 0;
+	border-radius: 12px;
+	border: 0;
+	font-size: 0.14rem;
+	padding: 0.1rem 0;
+	background-color: #dd524d;
+}

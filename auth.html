@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>实名认证</title>
+    <link href="src/plugins/mui/mui.min.css" rel="stylesheet"/>
+    <link href="src/css/global.css" rel="stylesheet" />
+    <link href="src/css/html/auth.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="auth">
+		<section class="topArea">
+			<a href="mine.html" class="mui-icon mui-icon-back"></a>
+			<div>实名认证</div>
+		</section>
+		
+		<section class="contentArea">
+			<!--认证流程：一共3个阶段-->
+			
+			<div class="authStage">
+				<div class="authStage1"style="display: block;">
+					<img src="src/img/authStage1.jpg" />
+					<form class="mui-input-group">
+					    <div class="mui-input-row">
+					        <label>真实姓名</label>
+					   	 	<input type="text" class="mui-input-clear" placeholder="请输入姓名">
+					    </div>
+						<div class="mui-input-row sexRadio">
+				        	<label>性别</label>
+					        <div class="mui-input-row mui-radio mui-left">
+								<label>男</label>
+								<input value="男" name="radio1" type="radio">
+							</div>
+							<div class="mui-input-row mui-radio mui-left">
+								<label>女</label>
+								<input value="女" name="radio1" type="radio">
+							</div>
+				   		</div>
+					    <div class="mui-input-row">
+					        <label>身份证号码</label>
+					        <input type="number" class="mui-input-clear" placeholder="请输入身份证号码">
+					    </div>
+					    <div class="mui-input-row">
+					        <label>住址</label>
+					   	 	<input type="text" class="mui-input-clear" placeholder="请输入住址">
+					    </div>
+					</form>
+					<div class="idCard">
+						<div class="idCardTitle">请上传您的身份证照片</div>
+						<div class="idCardBox">
+							<div>
+								<img src="src/img/IDCard_1.png" />
+								<button>上传正面</button>
+							</div>
+							<div>
+								<img src="src/img/IDCard_2.png" />
+								<button>上传背面</button>
+							</div>
+						</div>
+					</div>
+					<div class="idCardTip">
+						<div>拍摄身份证要求：</div>
+						<p>大陆公民持有本人有效二代身份证；</p>
+						<p>拍摄时确保身份证<span>边框完整，</span><span>字迹清晰，</span><span>亮度均匀；</span></p>
+					</div>
+					<button class="authStage1Button">下一步</button>
+				</div>
+				<div class="authStage2">
+					<img src="src/img/authStage2.jpg" />
+					<form class="mui-input-group">
+						<div class="mui-input-row">
+					        <label>银行卡卡号</label>
+					   	 	<input type="number" class="mui-input-clear" placeholder="请输入银行卡卡号">
+					    </div>
+					    <div class="mui-input-row">
+					        <label>归属银行</label>
+					        <select>
+					        	<option>选择开户行</option>
+					        </select>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>开户省市</label>
+					   	 	<select style="width: 32.5%;">
+					   	 		<option>选择省份</option>
+					   	 	</select>
+					   	 	<select style="width: 32.5%;">
+					   	 		<option>选择城市</option>
+					   	 	</select>
+					    </div>
+					    <div class="mui-input-row">
+					        <label>开户支行</label>
+					   	 	<input type="text" class="mui-input-clear" placeholder="请输入所在支行名称">
+					    </div>
+					</form>
+					<div class="authStage2_ask">
+						<h3>资产规模</h3>
+						<p>金融资产不低于500万元人民币，或者最近3年个人年均收入不低于50万元人民币？</p>
+						<div class="authStage2_ask_button">
+							<div class="mui-input-row mui-radio mui-left">
+								<label>是</label>
+								<input name="a" type="radio">
+							</div>
+							<div class="mui-input-row mui-radio mui-left">
+								<label>否</label>
+								<input name="a" type="radio">
+							</div>
+						</div>
+						<h3></h3>
+						<p>私募基金或者资产管理计划投资者，最近20个交易日金融资产均不得低于人民币300万元，或者最近3年个人年均收入不都与人民币50万元？</p>
+						<div class="authStage2_ask_button">
+							<div class="mui-input-row mui-radio mui-left">
+								<label>是</label>
+								<input name="a" type="radio">
+							</div>
+							<div class="mui-input-row mui-radio mui-left">
+								<label>否</label>
+								<input name="a" type="radio">
+							</div>
+						</div>
+					</div>
+					<div class="authStage2_ask">
+						<h3>投资经历</h3>
+						<p>具有2年以上证券、基金、期货、黄金、外汇等投资经历，或者具有2年以上金融产品设计、投资、风险管理依旧相关工作经验的自然人投资者，或者属于《证券提货投资者适当性管理办法》第八条第（一）款所规定的专业投资者的高级管理人员、获得职业资格认证的从事金融相关业务的注册会及时和律师。</p>
+						<div class="authStage2_ask_button">
+							<div class="mui-input-row mui-radio mui-left">
+								<label>是</label>
+								<input name="a" type="radio">
+							</div>
+							<div class="mui-input-row mui-radio mui-left">
+								<label>否</label>
+								<input name="a" type="radio">
+							</div>
+						</div>
+					</div>
+					<div class="authStage2_ask">
+						<h3 style="border: 0;">实际交易受益人</h3>
+						<div class="authStage2_ask_button">
+							<div class="mui-input-row mui-radio mui-left">
+								<label>本人</label>
+								<input name="a" type="radio">
+							</div>
+							<div class="mui-input-row mui-radio mui-left">
+								<label>他人</label>
+								<input name="a" type="radio">
+							</div>
+						</div>
+					</div>
+					<div class="authStage2_ask">
+						<h3 style="border: 0;">有否不良信用记录</h3>
+						<div class="authStage2_ask_button">
+							<div class="mui-input-row mui-radio mui-left">
+								<label>是</label>
+								<input name="a" type="radio">
+							</div>
+							<div class="mui-input-row mui-radio mui-left">
+								<label>否</label>
+								<input name="a" type="radio">
+							</div>
+						</div>
+					</div>
+					<button class="authStage2Button">提交</button>
+					<button class="authStage2Button_back">上一步</button>
+				</div>
+				<div class="authStage3"></div>
+			</div>
+			
+		</section>
+		
+		
+	</div>
+	
+<script src="src/plugins/jquery-3.2.1.min.js"></script>
+<script src="src/plugins/vue.js"></script>
+<script src="src/plugins/mui/mui.min.js"></script>
+
+<script src="src/js/global.js"></script>
+<script src="src/js/callAPI.js"></script>
+<!--<script src="src/js/components/bottomNAV.js"></script>-->
+<script src="src/js/vue/auth.js"></script>
+<script>
+	mui.init();
+</script>
+</body>
+</html>

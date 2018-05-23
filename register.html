@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>注册</title>
+    <link href="src/plugins/mui/mui.min.css" rel="stylesheet"/>
+    <link href="src/css/global.css" rel="stylesheet" />
+    <link href="src/css/html/register.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="register">
+		<div class="zzc1">
+			<section class="registerSuccess">
+				<div class="mui-icon mui-icon-checkmarkempty"></div>
+				<p>恭喜您，注册成功！</p>
+				<button class="registerSuccessButton" @click="href">{{hrefLoginCD}}s后跳转登录</button>
+			</section>
+		</div>
+		
+		<section class="topArea">
+			<a href="login.html" class="mui-icon mui-icon-back"></a>
+			<div>注册</div>
+		</section>
+		
+		<section class="registerBox">
+			<div class="registerBoxForm">
+				<span class="mui-icon mui-icon-person"></span>
+				<input type="number" placeholder="请输入手机号码" v-model="user"/>
+			</div>
+			
+			<div class="registerBoxForm">
+				<span class="mui-icon mui-icon-email"></span>
+				<input type="number" placeholder="请输入验证码" v-model="code" />
+			</div>
+			<div class="getCheckCode" @click="getCheckCode()" v-show="show">获取验证码</div>
+			<div class="getCheckCodeCD" v-show="!show">{{getCheckCodeCD}}S</div>
+			<div class="registerBoxForm" style="margin-top: 10px;">
+				<span class="mui-icon mui-icon-locked"></span>
+    			<div class="mui-input-row">
+			       	<input type="password" class="mui-input-password" placeholder="请输入密码" v-model="pas">
+			   	</div>
+			</div>
+			<button class="registerButton" @click="register()">注册</button>
+		</section>
+		
+	</div>
+	
+<script src="src/plugins/jquery-3.2.1.min.js"></script>
+<script src="src/plugins/vue.js"></script>
+<script src="src/plugins/mui/mui.min.js"></script>
+
+<script src="src/js/global.js"></script>
+<script src="src/js/callAPI.js"></script>
+<script src="src/js/components/bottomNAV.js"></script>
+<script src="src/js/vue/register.js"></script>
+<script>
+	mui.init();
+</script>
+</body>
+</html>

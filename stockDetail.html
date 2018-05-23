@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>股票详情</title>
+    <link href="src/plugins/mui/mui.min.css" rel="stylesheet"/>
+    <link href="src/css/global.css" rel="stylesheet" />
+    <link href="src/css/html/stockDetail.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="stockDetail">
+		<section class="topArea">
+			<a :href="href" class="mui-icon mui-icon-back"></a>
+			<div>股票详情</div>
+		</section>
+		
+		<section class="contentArea" style="padding-top: 0.46rem;">
+			<div class="stockInfo">
+				<div class="stockInfo_row mui-row">
+					<div class="mui-col-xs-3 stockName">{{Detail.name}}</div>
+					<div class="mui-col-xs-3 stockCode">{{Detail.code}}</div>
+					<div class="mui-col-xs-3"></div>
+					<div class="mui-col-xs-3 stockPrice" :class="klass">{{Detail.price}}</div>
+				</div>
+				<div class="stockInfo_row mui-row">
+					<div class="mui-col-xs-3 stockTitle">涨跌幅</div>
+					<div class="mui-col-xs-3 stockPercent" :class="klass">{{Detail.zdf}}</div>
+					<div class="mui-col-xs-3 stockGap" :class="klass">{{Detail.zde}}</div>
+				</div>
+			</div>
+			<div class="stockValue">
+				<div class="mui-row">
+					<div class="mui-col-xs-6">
+						<span class="stockValue_key">今开：</span>
+						<span class="stockValue_value">{{Detail.jk}}</span>
+					</div>
+					<div class="mui-col-xs-6">
+						<span class="stockValue_key">昨收：</span>
+						<span class="stockValue_value">{{Detail.zs}}</span>
+					</div>
+					<div class="mui-col-xs-6">
+						<span class="stockValue_key">成交量：</span>
+						<span class="stockValue_value">{{Detail.cjl|Detail_cjl}}</span>
+					</div>
+				</div>
+				<div class="mui-row">
+					<div class="mui-col-xs-6">
+						<span class="stockValue_key">最低：</span>
+						<span class="stockValue_value">{{Detail.zdj}}</span>
+					</div>
+					<div class="mui-col-xs-6">
+						<span class="stockValue_key">最高：</span>
+						<span class="stockValue_value">{{Detail.zgj}}</span>
+					</div>
+					<div class="mui-col-xs-6">
+						<span class="stockValue_key">成交额：</span>
+						<span class="stockValue_value">{{Detail.cje|Detail_cje}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="stockImg">
+				<div class="appTab" data-appTab="a">
+					<span id="min" class="appTab_active">分时</span>
+					<span id="daily">日K</span>
+					<span id="weekly">周K</span>
+					<span id="mothly">月K</span>
+				</div>
+				<div id="min" class="appTabContent appTabContent_active" data-appTabContent="a">
+					<img :src="'http://image.sinajs.cn/newchart/min/n/'+type+Detail.code+'.gif'"/>
+				</div>
+				<div id="daily" class="appTabContent" data-appTabContent="a">
+					<img :src="'http://image.sinajs.cn/newchart/daily/n/'+type+Detail.code+'.gif'"/>
+				</div>
+				<div id="weekly" class="appTabContent" data-appTabContent="a">
+					<img :src="'http://image.sinajs.cn/newchart/weekly/n/'+type+Detail.code+'.gif'"/>
+				</div>
+				<div id="mothly" class="appTabContent" data-appTabContent="a">
+					<img :src="'http://image.sinajs.cn/newchart/monthly/n/'+type+Detail.code+'.gif'"/>
+				</div>
+			</div>
+			<button class="stockInput stockInput_add">
+				加入自选股				
+			</button>
+		</section>
+	</div>
+	
+<script src="src/plugins/jquery-3.2.1.min.js"></script>
+<script src="src/plugins/vue.js"></script>
+<script src="src/plugins/mui/mui.min.js"></script>
+
+<script src="src/js/global.js"></script>
+<script src="src/js/callAPI.js"></script>
+<!--<script src="src/js/components/bottomNAV.js"></script>-->
+<script src="src/js/vue/stockDetail.js"></script>
+<script>
+	mui.init();
+	
+	/*appTab选项卡控制*/
+	appTab()
+	
+	/*调用->stockDetail.html数据接口：stockDetailAPI*/
+	if(sessionStorage.getItem('stockCode')==undefined){//session中没有股票代码，则页面返回到market.html
+		window.location.href='market.html';
+	}else{
+		stockDetailAPI();	
+	};
+	
+	if(sessionStorage.getItem('href')==undefined){//session中没有路劲，则自动添加路径：market.html
+		sessionStorage.setItem('href','market.html');
+	};
+</script>
+</body>
+</html>

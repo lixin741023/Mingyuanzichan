@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>交易</title>
+    <link href="src/plugins/mui/mui.min.css" rel="stylesheet"/>
+    <link href="src/css/global.css" rel="stylesheet" />
+	<link href="src/css/html/trade.css" rel="stylesheet" />    
+</head>
+<body>
+	<div id="trade">
+		<div class="zzc1">
+			<my-apply-box :show-data="ApplyBox" v-show="ApplyBoxShow"></my-apply-box>
+			<my-depot-box :show-data="depotBox" v-show="depotBoxShow"></my-depot-box>
+		</div>
+		
+		<section class="topArea">
+			<div>交易</div>
+		</section>
+		
+		<section class="contentArea" style="padding-top: 0.6rem; padding-bottom: 0.65rem;">
+			<div class="appTab" data-appTab="a">
+				<span id="a1" class="appTab_active">询价</span>
+				<span id="a4">申购</span>
+				<span id="a2">持仓</span>
+				<span id="a3">结算</span>
+			</div>
+			<div id="a1" class="appTabContent appTabContent_active" data-appTabContent="a">
+				<!--询价--->
+				<div class="appTab appTab2" data-appTab="b">
+					<span id="b1" class="appTab_active">询价项目</span>
+					<span id="b2">询价记录</span>
+				</div>
+				<div id="b1" class="appTabContent appTabContent_active project" data-appTabContent="b">
+					<!--询价项目-->
+					<div>
+						<span>股票代码</span>
+						<input type="number" placeholder="请输入股票代码" v-model="searchCode" @keyup="searchStock()"/>
+					</div>
+					<div>
+						<span>股票名称</span>
+						<input type="text" readonly="" v-model="searchResult.name" />
+					</div>
+					<!--<div>
+						<span>权利金比例</span>
+						<select>
+							<option>100%</option>
+						</select>
+					</div>-->
+					<div>
+						<span>投顾期限</span>
+						<select v-model="project_time">
+							<option value="1个月">1个月</option>
+						</select>
+					</div>
+					<div>
+						<span>名义本金(万)</span>
+						<input type="number" placeholder="请输入金额/万" v-model="project_mybj"/>
+					</div>
+					<button class="projectButton" @click="askMoney()">立即询价</button>
+				</div>
+				<div id="b2" class="appTabContent record" data-appTabContent="b">
+					<!--询价记录-->
+					<li v-for="(a,b) in recordList">
+						<div class="recordTitle">
+							<div class="recordTitle_row1">
+								<span>{{a.sname}}</span>
+								<span>{{a.scode}}</span>
+							</div>
+							<div class="recordTitle_row2">
+								<h3>{{a.stockinfo.price}}</h3>
+								<div>
+									<span>{{a.stockinfo.zde}}</span>
+									<span>{{a.stockinfo.zdf}}%</span>
+								</div>
+							</div>
+							<span class="mui-badge recordState recordState_valid">{{a.status|recordList_state}}</span>
+						</div>
+						<div class="recordRoow">
+							<span>询价时间</span>
+							<span>{{a.xjsj}}</span>
+						</div>
+						<div class="recordRoow">
+							<span>权利金比例</span>
+							<span>{{a.qljbl}}</span>
+						</div>
+						<div class="recordRoow">
+							<span>投顾期限</span>
+							<span>{{a.tgqx}}</span>
+						</div>
+						<div class="recordRoow">
+							<span>名义本金</span>
+							<span>{{a.mybj}}</span>
+						</div>
+						<div class="recordRoow">
+							<span>投顾费用</span>
+							<span>{{a.tgfy}}</span>
+						</div>
+						<button class="recordButton" @click="recordButton(b)" v-show="a.status==2">认购</button>
+						<button class="recordButton" @click="recordButton(b)">Test</button>
+					</li>
+				</div>
+			</div>
+			<div id="a4" class="appTabContent" data-appTabContent="a">
+				<!--申购-->
+				<div class="Apply">
+					<div class="ApplyTitle mui-row">
+						<div class="mui-col-xs-3">股票</div>
+						<div class="mui-col-xs-2">权利金</div>
+						<div class="mui-col-xs-2">成交价</div>
+						<div class="mui-col-xs-3">成交时间</div>
+						<div class="mui-col-xs-2">状态</div>
+					</div>
+					<li class="ApplyList mui-row" v-for="(a,b) in ApplyList">
+						<div class="mui-col-xs-3 ApplyCol">
+							<span>{{a.sname}}</span>
+							<span>{{a.scode}}</span>
+						</div>
+						<div class="mui-col-xs-2">{{a.mybj}}</div>
+						<div class="mui-col-xs-2">{{a.cjj}}</div>
+						<div class="mui-col-xs-3">{{a.apply_time}}</div>
+						<div class="mui-col-xs-2 ApplyState_a">{{a.status|ApplyList_state}}</div>
+					</li>
+				</div>
+			</div>
+			<div id="a2" class="appTabContent" data-appTabContent="a">
+				<!--持仓-->
+				<div class="depot">
+					<div class="depotTitle mui-row">
+						<div class="mui-col-xs-3">股票</div>
+						<div class="mui-col-xs-2 depotCol">
+							<span>现价</span>
+							<span>成交价</span>
+						</div>
+						<div class="mui-col-xs-3 depotCol">
+							<span>权利金</span>
+							<span>预期收益</span>
+						</div>
+						<div class="mui-col-xs-2">涨跌幅</div>
+						<div class="mui-col-xs-2">状态</div>
+					</div>
+					<li class="depotList mui-row" v-for="(a,b) in depotList" @click="depotDetail(b)">
+						<div class="mui-col-xs-3 depotCol">
+							<span>{{a.sname}}</span>
+							<span>{{a.scode}}</span>
+						</div>
+						<div class="mui-col-xs-2 depotCol">
+							<span>{{a.stockinfo.price}}</span>
+							<span>{{a.cjj}}</span>
+						</div>
+						<div class="mui-col-xs-3 depotCol">
+							<span>{{a.qlj}}</span>
+							<span>{{a.yqsy}}</span>
+						</div>
+						<div class="mui-col-xs-2">{{a.zdf}}</div>
+						<div class="mui-col-xs-2">{{a.status|depotList_state}}</div>
+					</li>
+				</div>
+			</div>
+			<div id="a3" class="appTabContent" data-appTabContent="a">
+				<!--结算-->
+				<div class="settle">
+					<div class="settleTitle mui-row">
+						<div class="mui-col-xs-3">股票</div>
+						<div class="mui-col-xs-3 settleCol">
+							<span>行权价</span>
+							<span>期初价</span>
+						</div>
+						<div class="mui-col-xs-3 settleCol">
+							<span>盈利金</span>
+							<span>盈亏</span>
+						</div>
+						<div class="mui-col-xs-3">行权日</div>
+					</div>
+					<li class="settleList mui-row" v-for="(a,b) in settleList">
+						<div class="mui-col-xs-3 settleCol">
+							<span>{{a}}</span>
+							<span>{{a}}</span>
+						</div>
+						<div class="mui-col-xs-3 settleCol">
+							<span>{{a}}</span>
+							<span>{{a}}</span>
+						</div>
+						<div class="mui-col-xs-3 settleCol">
+							<span>{{a}}</span>
+							<span>{{a}}</span>
+						</div>
+						<div class="mui-col-xs-3">{{a}}</div>
+					</li>
+				</div>
+			</div>
+		</section>
+		
+		<section class="bottomArea">
+			<my-bottom-nav></my-bottom-nav>
+		</section>
+	</div>
+	
+<script src="src/plugins/jquery-3.2.1.min.js"></script>
+<script src="src/plugins/vue.js"></script>
+<script src="src/plugins/mui/mui.min.js"></script>
+
+<script src="src/js/global.js"></script>
+<script src="src/js/callAPI.js"></script>
+<script src="src/js/components/ApplyBox.js"></script><!--引入认购确认组件-->
+<script src="src/js/components/depotBox.js"></script><!--引入持仓列表详情组件-->
+<script src="src/js/components/bottomNAV.js"></script><!--引入页面底部导航组件-->
+<script src="src/js/vue/trade.js"></script>
+<script>
+	mui.init();
+	
+	/*appTab选项卡控制*/
+	appTab()
+	
+	
+	$('.mui-icon-close').on('click',function(){
+		$('.zzc1').fadeOut('fast')
+	});
+	
+	/*调用->询价记录数据接口：recordAPI*/
+	recordAPI();
+	
+	/*调用->申购记录数据接口：ApplyAPI*/
+	ApplyAPI();
+	
+	/*调用->持仓记录数据接口：depotAPI*/
+	depotAPI();
+	
+	/*调用->结算记录数据接口：settleAPI*/
+	settleAPI();
+</script>
+</body>
+</html>

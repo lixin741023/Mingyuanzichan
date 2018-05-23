@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>登录</title>
+    <link href="src/plugins/mui/mui.min.css" rel="stylesheet"/>
+    <link href="src/css/global.css" rel="stylesheet" />
+    <link href="src/css/html/login.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="login">
+		<section class="loginBox">
+			<img class="loginBoxImg" src="src/img/loginTitle.png" />
+			<div class="loginBoxForm">
+				<div>
+					<span>用户名</span>
+					<input type="number" placeholder="请输入手机号码" v-model="user"/>
+				</div>
+				<div>
+					<span>密码</span>
+					<input type="password" placeholder="请输入密码" v-model="pas"/>
+				</div>
+			</div>
+			<div class="loginBoxHref">
+				<a href="register.html">注册</a>
+				<a href="findPassword.html">忘记密码</a>
+			</div>
+			<button class="loginButton" @click="login()">登录</button>
+		</section>
+		<div style="position: absolute; bottom: 0;" @click="clear">清空记录</div>
+	</div>
+	
+<script src="src/plugins/jquery-3.2.1.min.js"></script>
+<script src="src/plugins/vue.js"></script>
+<script src="src/plugins/mui/mui.min.js"></script>
+
+<script src="src/js/global.js"></script>
+<script src="src/js/callAPI.js"></script>
+<script src="src/js/components/bottomNAV.js"></script>
+<script src="src/js/vue/login.js"></script>
+<script>
+	mui.init();
+	
+	/**/
+	if(localStorage.getItem('user')==undefined){//local中没有user信息，则默认为‘’
+		localStorage.setItem('user','');
+	};
+</script>
+</body>
+</html>

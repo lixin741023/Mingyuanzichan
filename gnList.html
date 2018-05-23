@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>行业板块</title>
+    <link href="src/plugins/mui/mui.min.css" rel="stylesheet"/>
+    <link href="src/css/global.css" rel="stylesheet" />
+    <link href="src/css/html/gnList.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="gnList">
+		<section class="topArea">
+			<a href="market.html" class="mui-icon mui-icon-back"></a>
+			<div>概念板块</div>
+		</section>
+		
+		<section class="contentArea" style="padding: 0 15px; text-align: center;">
+			<div class="gnList_title mui-row">
+				<div class="mui-col-xs-4">股票名称</div>
+				<div class="mui-col-xs-4">涨跌幅</div>
+				<div class="mui-col-xs-4">领涨股</div>
+			</div>
+			<div class="gnList_list mui-row" v-for="(a,b) in gnList">
+				<div class="mui-col-xs-4">{{a.pname}}</div>
+				<div class="mui-col-xs-4">{{a.pincrease}}</div>
+				<div class="mui-col-xs-4">{{a.sname}}</div>
+			</div>
+		</section>
+	</div>
+	
+<script src="src/plugins/jquery-3.2.1.min.js"></script>
+<script src="src/plugins/vue.js"></script>
+<script src="src/plugins/mui/mui.min.js"></script>
+
+<script src="src/js/global.js"></script>
+<script src="src/js/callAPI.js"></script>
+<!--<script src="src/js/components/bottomNAV.js"></script>-->
+<script src="src/js/vue/gnList.js"></script>
+<script>
+	mui.init();
+	
+	/*调用->gnList.html数据接口:gnListAPI*/
+	gnListAPI()
+</script>
+</body>
+</html>

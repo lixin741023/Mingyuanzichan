@@ -1,0 +1,202 @@
+/**/
+.topArea{
+	display: flex;
+	position: relative;
+	border-bottom: 2px solid #ccc;
+	font-size: 0.21rem;
+	padding: 8px 0;
+	background-color: #fff;
+	align-items: center;
+	justify-content: center;
+}
+.topArea a{
+	position: absolute;
+	font-size: 0.2rem;
+	left: 5px;
+}
+/**/
+.authStage{
+	font-size: 0.145rem;
+}
+.authStage .mui-input-row{
+	height: auto;
+	display: flex;
+}
+.authStage input{
+	font-size: 0.145rem;
+	height: auto!important;
+	padding: 0;
+}
+.authStage .mui-icon-clear{
+	top: 0.1rem!important;
+}
+.authStage label{
+	line-height: normal!important;
+}
+/**/
+.sexRadio{}
+.sexRadio .mui-input-row{
+	display: inline-block;
+}
+.sexRadio .mui-input-row label{
+	font-size: 0.145rem;
+	padding-left: 36px;
+}
+.sexRadio .mui-input-row input{
+	top: 0.059rem;
+	left: 1px!important;
+}
+.sexRadio .mui-input-row:after{
+	background-color: transparent;
+}
+.sexRadio .mui-input-row:last-child{
+	margin-left: 0.25rem;
+}
+.authStage1{
+	padding-bottom: 45px;
+}
+.authStage1 img{
+	width: 100%;
+}
+.idCard{
+	background-color: #fff;
+	margin-top: 18px;
+	border-top: 1px solid #D6D5D9;
+	border-bottom: 1px solid #D6D5D9;
+	padding: 11px 15px;
+}
+.idCardTitle{
+	font-size: 0.145rem;
+	color: #333;
+}
+.idCardBox{
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-around;
+	padding: 0 0 25px;
+}
+.idCardBox img{
+	width: 1.7rem;
+}
+.idCardBox div{
+	display: flex;
+	flex-direction: column;
+}
+.idCardBox button{
+	color: #fff;
+	background-color: #ff4747;
+	border-radius: 8px;	
+	font-size: 0.12rem;
+	padding: 0.04rem 0;
+	border: 1px solid #ff4747;
+}
+.idCardBox button:active{
+	background-color: #bb313e!important;
+}
+.idCardTip{
+	background-color: #fff;
+	margin-top: 18px;
+	border-top: 1px solid #D6D5D9;
+	border-bottom: 1px solid #D6D5D9;
+	padding: 11px 15px;
+}
+.idCardTip div{
+	font-size: 0.145rem;
+	color: #333;
+	margin-bottom: 5px;
+}
+.idCardTip p{
+	font-size: 0.1rem;	
+	margin-bottom: 5px;
+}
+.idCardTip p span{
+	color: red;
+}
+.authStage1Button{
+	display: block;
+	color: #fff;
+	width: 90%;
+	margin: 0.25rem auto 0;
+	background-color: #dd524d;
+	border-radius: 14px;
+	border: 0;
+	font-size: 0.14rem;
+	padding: 0.07rem 0;
+}
+.authStage1Button:active{
+	border: 1px solid #dd524d;
+	background-color: #bb313e!important;
+}
+/**/
+.authStage2{
+	padding-bottom: 45px;
+}
+.authStage2 img{
+	width: 100%;
+}
+.authStage2 select{
+	height: auto;
+	margin: 0;
+	font-size: 0.145rem;
+	line-height: normal;
+}
+.authStage2_ask{
+	padding: 11px 15px;
+	background-color: #fff;
+	margin-top: 18px;
+	border-top: 1px solid #D6D5D9;
+	border-bottom: 1px solid #D6D5D9;
+}
+.authStage2_ask h3{
+	font-size: 0.135rem;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 5px;
+	font-weight: 400;
+	margin: 0;
+}
+.authStage2_ask p{
+	margin-top: 5px;
+	text-indent: 0.18rem;
+	font-size: 0.1rem;
+	letter-spacing: 1px;
+	line-height: 1.6;
+	margin-bottom: 0;
+}
+.authStage2_ask .authStage2_ask_button{
+	margin-top: 0.05rem;
+	text-align: center;
+}
+.authStage2_ask .authStage2_ask_button .mui-input-row{
+	display: inline-block;
+}
+.authStage2_ask .authStage2_ask_button .mui-input-row:first-child{
+	margin-right: 0.7rem;
+}	
+.authStage2_ask .authStage2_ask_button .mui-input-row input{
+	top: 0.059rem;
+}
+.authStage2Button{
+	display: block;
+	color: #fff;
+	width: 90%;
+	margin: 0.25rem auto 0;
+	background-color: #dd524d;
+	border-radius: 14px;
+	border: 0;
+	font-size: 0.14rem;
+	padding: 0.07rem 0;
+}
+.authStage2Button:active{
+	background-color: #bb313e!important;
+}
+.authStage2Button_back{
+	display: block;
+	color: #333;
+	width: 90%;
+	margin: 0.09rem auto 0;
+	background-color: #fff;
+	border-radius: 14px;
+	border: 0;
+	font-size: 0.14rem;
+	padding: 0.07rem 0;
+}

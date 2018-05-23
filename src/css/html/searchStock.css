@@ -1,0 +1,85 @@
+/**/
+.topArea{
+	display: flex;
+	position: relative;
+	border-bottom: 2px solid #ccc;
+	font-size: 0.21rem;
+	padding: 8px 0;
+	background-color: #fff;
+	align-items: center;
+	justify-content: center;
+}
+.topArea a{
+	position: absolute;
+	font-size: 0.2rem;
+	left: 5px;
+}
+/**/
+.contentArea{
+	padding: 1px 10px;
+}
+.search{
+	margin-top: 10px;
+}
+.search input{
+	height: auto;	
+	font-size: 0.145rem;
+	line-height: normal;
+	margin: 0;
+	letter-spacing: 2px;
+}
+.search .mui-icon-clear{
+	top: 0.1rem!important;
+}
+.searchResult{
+	margin: 0;
+	padding: 0;
+}
+.searchResult li{
+	margin-top: 10px;
+	list-style: none;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	border-radius: 12px;
+	text-align: center;
+	padding: 0.09rem 0.1rem;
+	display: flex;
+	align-items: center;
+}
+.stockClass{
+	display: inline-block;
+	border: 0.008rem solid #f65a41;
+	border-radius:0.1rem ;
+	color: #f65a41;
+	font-size: 0.1rem;
+	padding: 0.025rem 0.1rem;
+}
+.stockCode{
+	font-size: 0.15rem;
+}
+.stockName{
+	font-size: 0.16rem;
+}
+.stockInput{
+	display: flex;
+	justify-content: center;
+}
+.stockInput_add{
+	display: inline-block;
+	width: 0.2rem;
+	height: 0.2rem;
+	line-height: 0.185rem;
+	font-size: 0.2rem;
+	border-radius: 50%;
+	border: 1px solid #f65a41;
+	color: #F65A41;
+}
+.stockInput_remove{
+	display: inline-block;
+	width: 0.2rem;
+	height: 0.2rem;
+	line-height: 0.185rem;
+	font-size: 0.25rem;
+	color: #F65A41;
+	transform: rotateZ(225deg);		
+}

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>行情</title>
+    <link href="src/plugins/mui/mui.min.css" rel="stylesheet"/>
+    <link href="src/css/global.css" rel="stylesheet" />
+   	<link href="src/css/html/market.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="market">
+	<section class="topArea">
+		<a href="searchStock.html"><img src="src/img/search_2.png" /></a>
+		<div>行情</div>
+	</section>
+	
+	<section class="contentArea" style="padding: 0.6rem 10px 0.65rem 10px;">
+		<div class="appTab" data-appTab="a">
+			<span id="a1" class="appTab_active">行情</span>
+			<span id="a2">自选股</span>
+		</div>
+		<div id="a1" class="appTabContent appTabContent_active" data-appTabContent="a" ><!--行情-->
+			<!--4大板块指数-->
+			<div class="fourBlock">
+				<div class="mui-row">
+					<div class="mui-col-xs-6">
+						<div class="fourBlockBox" :class="bzdata.cybz.zde<0?'fourBlock_down':'fourBlock_up'">
+							<div class="fourBlockBox_row1">{{bzdata.cybz.name}}</div>
+							<div class="fourBlockBox_row2">
+								<img src="src/img/K.png" />
+								<span>{{bzdata.cybz.price}}</span>
+							</div>
+							<div class="fourBlockBox_row3">
+								<span>{{bzdata.cybz.zde|bzdata_zde}}</span>
+								<span>{{bzdata.cybz.zdf|bzdata_zdf}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="mui-col-xs-6">
+						<div class="fourBlockBox" :class="bzdata.szcz.zde<0?'fourBlock_down':'fourBlock_up'">
+							<div class="fourBlockBox_row1">{{bzdata.szcz.name}}</div>
+							<div class="fourBlockBox_row2">
+								<img src="src/img/K.png" />
+								<span>{{bzdata.szcz.price}}</span>
+							</div>
+							<div class="fourBlockBox_row3">
+								<span>{{bzdata.szcz.zde|bzdata_zde}}</span>
+								<span>{{bzdata.szcz.zdf|bzdata_zdf}}</span>
+							</div>
+						</div>
+					</div>
+				</div>		
+				<div class="mui-row">
+					<div class="mui-col-xs-6">
+						<div class="fourBlockBox" :class="bzdata.szzs.zde<0?'fourBlock_down':'fourBlock_up'">
+							<div class="fourBlockBox_row1">{{bzdata.szzs.name}}</div>
+							<div class="fourBlockBox_row2">
+								<img src="src/img/K.png" />
+								<span>{{bzdata.szzs.price}}</span>
+							</div>
+							<div class="fourBlockBox_row3">
+								<span>{{bzdata.szzs.zde|bzdata_zde}}</span>
+								<span>{{bzdata.szzs.zdf|bzdata_zdf}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="mui-col-xs-6">
+						<div class="fourBlockBox" :class="bzdata.zxbz.zde<0?'fourBlock_down':'fourBlock_up'">
+							<div class="fourBlockBox_row1">{{bzdata.zxbz.name}}</div>
+							<div class="fourBlockBox_row2">
+								<img src="src/img/K.png" />
+								<span>{{bzdata.zxbz.price}}</span>
+							</div>
+							<div class="fourBlockBox_row3">
+								<span>{{bzdata.zxbz.zde|bzdata_zde}}</span>
+								<span>{{bzdata.zxbz.zdf|bzdata_zdf}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--<section class="appTitle">
+				<span class="mui-badge mui-badge-primary">行业板块</span>
+				<a href="hyList.html">MORE+</a>
+			</section>-->
+			<section class="appTitle">
+				<div><span>行业</span>板块</div>
+				<a href="hyList.html">MORE+</a>
+			</section>
+			<!--行业板块-->
+			<div class="blockShow mui-row">
+				<div class="mui-col-xs-4" style="padding-right: 0.03rem;">
+					<div class="blockShowBox">
+						<div class="blockShowBox_row1">{{hydata[0].pname}}</div>
+						<div class="blockShowBox_row2">{{hydata[0].pincrease}}</div>
+						<div class="blockShowBox_row3">
+							<span>{{hydata[0].sname}}</span>
+							<span>{{hydata[0].sincrease}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-col-xs-4" style="padding: 0 0.03rem;">
+					<div class="blockShowBox">
+						<div class="blockShowBox_row1">{{hydata[1].pname}}</div>
+						<div class="blockShowBox_row2">{{hydata[1].pincrease}}</div>
+						<div class="blockShowBox_row3">
+							<span>{{hydata[1].sname}}</span>
+							<span>{{hydata[1].sincrease}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-col-xs-4" style="padding-left: 0.03rem;">
+					<div class="blockShowBox">
+						<div class="blockShowBox_row1">{{hydata[2].pname}}</div>
+						<div class="blockShowBox_row2">{{hydata[2].pincrease}}</div>
+						<div class="blockShowBox_row3">
+							<span>{{hydata[2].sname}}</span>
+							<span>{{hydata[2].sincrease}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="appTitle">
+				<div><span>概念</span>板块</div>
+				<a href="gnList.html">MORE+</a>
+			</section>
+			<!--<section class="appTitle">
+				<span class="mui-badge mui-badge-primary">概念板块</span>
+				<a href="gnList.html">MORE+</a>
+			</section>-->
+			<!--概念板块-->
+			<div class="blockShow mui-row">
+				<div class="mui-col-xs-4" style="padding-right: 0.03rem;">
+					<div class="blockShowBox">
+						<div class="blockShowBox_row1">{{gndata[0].pname}}</div>
+						<div class="blockShowBox_row2">{{gndata[0].pincrease}}</div>
+						<div class="blockShowBox_row3">
+							<span>{{gndata[0].sname}}</span>
+							<span>{{gndata[0].sincrease}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-col-xs-4" style="padding: 0 0.03rem;">
+					<div class="blockShowBox">
+						<div class="blockShowBox_row1">{{gndata[1].pname}}</div>
+						<div class="blockShowBox_row2">{{gndata[1].pincrease}}</div>
+						<div class="blockShowBox_row3">
+							<span>{{gndata[1].sname}}</span>
+							<span>{{gndata[1].sincrease}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="mui-col-xs-4" style="padding-left: 0.03rem;">
+					<div class="blockShowBox">
+						<div class="blockShowBox_row1">{{gndata[2].pname}}</div>
+						<div class="blockShowBox_row2">{{gndata[2].pincrease}}</div>
+						<div class="blockShowBox_row3">
+							<span>{{gndata[2].sname}}</span>
+							<span>{{gndata[2].sincrease}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="appTab" data-appTab="b" style="margin-top: 0.1rem;">
+				<span id="b1" class="appTab_active">涨幅榜</span>
+				<span id="b2">跌幅榜</span>
+			</div>
+			<div id="b1" class="appTabContent appTabContent_active" data-appTabContent="b">
+				<!--涨幅榜-->
+				<div class="stockInfo">
+					<div class="stockInfo_title mui-row">
+						<div class="mui-col-xs-3">股票名称</div>
+						<div class="mui-col-xs-2">现价</div>
+						<div class="mui-col-xs-1"><img src="src/img/marketsRanking_UP.png" /></div>
+						<div class="mui-col-xs-3">涨跌幅</div>
+						<div class="mui-col-xs-3">涨跌额</div>
+					</div>
+					<div class="stockInfo_list mui-row" v-for="(a,b) in zfdata">
+						<div class="mui-col-xs-3 stockInfo_list_name">
+							<div>{{a.name}}</div>
+							<div class="stockCode">{{a.code}}</div>
+						</div>
+						<div class="mui-col-xs-2 stockInfo_list_price">
+							{{a.price}}
+						</div>
+						<div class="mui-col-xs-1"></div>
+						<div class="mui-col-xs-3 stockInfo_list_percent stockInfo_up">
+							{{a.zdf}}
+						</div>
+						<div class="mui-col-xs-3 stockInfo_list_gap stockInfo_up">
+							{{a.zde}}
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="b2" class="appTabContent" data-appTabContent="b">
+				<!--跌幅榜-->
+				<div class="stockInfo">
+					<div class="stockInfo_title mui-row">
+						<div class="mui-col-xs-3">股票名称</div>
+						<div class="mui-col-xs-2">现价</div>
+						<div class="mui-col-xs-1"><img src="src/img/marketsRanking_DOWN.png" /></div>
+						<div class="mui-col-xs-3">涨跌幅</div>
+						<div class="mui-col-xs-3">涨跌额</div>
+					</div>
+					<div class="stockInfo_list mui-row" v-for="(a,b) in dfdata">
+						<div class="mui-col-xs-3 stockInfo_list_name">
+							<div>{{a.name}}</div>
+							<div class="stockCode">{{a.code}}</div>
+						</div>
+						<div class="mui-col-xs-2 stockInfo_list_price">
+							{{a.price}}
+						</div>
+						<div class="mui-col-xs-1"></div>
+						<div class="mui-col-xs-3 stockInfo_list_percent stockInfo_down">
+							{{a.zdf}}
+						</div>
+						<div class="mui-col-xs-3 stockInfo_list_gap stockInfo_down">
+							{{a.zde}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="a2" class="appTabContent" data-appTabContent="a"><!--自选股-->
+			<!--自选股-->
+			<div class="stockInfo">
+				<div class="stockInfo_title mui-row">
+					<div class="mui-col-xs-3">股票名称</div>
+					<div class="mui-col-xs-2">现价</div>
+					<div class="mui-col-xs-1"></div>
+					<div class="mui-col-xs-3">涨跌幅</div>
+					<div class="mui-col-xs-3">涨跌额</div>
+				</div>
+				<div class="stockInfo_list mui-row" v-for="(a,b) in zxdata">
+					<div class="mui-col-xs-3 stockInfo_list_name">
+						<div>{{a.name}}</div>
+						<div class="stockCode">{{a.code}}</div>
+					</div>
+					<div class="mui-col-xs-2 stockInfo_list_price">
+						{{a.price}}
+					</div>
+					<div class="mui-col-xs-1"></div>
+					<div class="mui-col-xs-3 stockInfo_list_percent" :class="a.zdf<0?'stockInfo_down':'stockInfo_up'">
+						{{a.zdf}}
+					</div>
+					<div class="mui-col-xs-3 stockInfo_list_gap" :class="a.zdf<0?'stockInfo_down':'stockInfo_up'">
+						{{a.zde}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="bottomArea">
+		<my-bottom-nav></my-bottom-nav>
+	</section>
+	</div>
+	
+<script src="src/plugins/jquery-3.2.1.min.js"></script>
+<script src="src/plugins/vue.js"></script>
+<script src="src/plugins/mui/mui.min.js"></script>
+
+<script src="src/js/global.js"></script>
+<script src="src/js/callAPI.js"></script>
+<script src="src/js/components/bottomNAV.js"></script>
+<script src="src/js/vue/market.js"></script>
+<script>
+	mui.init();
+	
+	/*appTab选项卡控制*/
+	appTab()
+	
+	/*调用->market.html数据接口:marketAPI*/
+	marketAPI()
+	
+	/*动态绑定click--->找到股票代码并存入sessionStorage*/
+	$('#market').on('click','.stockInfo_list',function(){
+		let stockCode=$(this).find('.stockCode').text();
+		sessionStorage.setItem('stockCode',stockCode);
+		sessionStorage.setItem('href',window.location.href);
+		window.location.href='stockDetail.html';
+	});
+	
+</script>
+</body>
+</html>

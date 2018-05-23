@@ -1,0 +1,57 @@
+.loginBox{
+	margin: 0.6rem auto 0;
+	width: 3.4rem;
+	border: 1px solid #ccc;
+	box-shadow: 1px 4px 4px #bbb;
+	padding-bottom: 30px;
+}
+.loginBoxImg{
+	display: block;
+	margin: 0.24rem auto 0;
+	width: 1.7rem;
+}
+.loginBoxForm{
+	padding: 0 20px;
+	font-size: 0.14rem;
+}
+.loginBoxForm div{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 3px 0.15rem ; 
+	margin-top: 20px;
+}
+.loginBoxForm div span{
+}
+.loginBoxForm input{
+	border: 0;
+	height: auto;
+	line-height: normal;
+	margin: 0;
+	font-size: 0.14rem;
+	width: 75%;
+}
+.loginBoxHref{
+	padding: 0 26px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.1rem;
+	margin-top: 10px;
+}
+.loginBoxHref a:first-child{
+	color: #f65a41;
+}
+.loginButton{
+	display: block;
+	color: #fff;
+	width: 85%;
+	margin: 0.25rem auto 0;
+	background-color: #dd524d;
+	border-radius: 10px;
+	border: 0;
+	font-size: 0.14rem;
+	padding: 0.07rem 0;
+}
+
