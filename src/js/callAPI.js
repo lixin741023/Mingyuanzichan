@@ -1,4 +1,5 @@
-let domain='hyu2581470001.my3w.com';
+//let domain='hyu2581470001.my3w.com';
+let domain='myzc010.com';
 
 /*获取短信验证码接口:getCheckCodeAPI*/
 function getCheckCodeAPI(user){
